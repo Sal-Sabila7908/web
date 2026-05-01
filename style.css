@@ -1,0 +1,123 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #b4d3f3;
+}
+
+.login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #32c52d, #0ea5e9);
+}
+
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+}
+
+input, select, textarea, .btn {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.btn {
+  background: #19cbce;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.app { display: none; }
+
+.navbar {
+  background: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand { font-size: 24px; font-weight: bold; }
+
+.logout {
+  padding: 10px 15px;
+  background: #32c52d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.doctor-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.doctor-img {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+.doctor-info {
+  padding: 15px;
+}
+
+.doctor-info h3 { margin-bottom: 8px; }
+.doctor-info p { margin: 5px 0; color: #666; }
+
+.rating-display { margin: 10px 0; font-size: 14px; }
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 380px;
+}
+
+/* Star Rating */
+.star-rating {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+  font-size: 32px;
+}
+
+.star-rating i {
+  cursor: pointer;
+  color: #ddd;
+}
+
+.star-rating i.active {
+  color: #f59e0b;
+}

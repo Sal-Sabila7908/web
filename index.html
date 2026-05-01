@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediCare</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Login Page -->
+  <div id="loginPage" class="login-page">
+    <div class="login-box">
+      <h2>MediCare</h2>
+      <input type="text" id="name" placeholder="Enter your name">
+      <input type="email" id="email" placeholder="Email">
+      <button class="btn" onclick="login()">Login</button>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <div id="mainApp" class="app">
+    <div class="navbar">
+      <div class="nav-brand">MediCare</div>
+      <button onclick="logout()" class="logout">Logout</button>
+    </div>
+
+    <div class="doctors-container">
+      <h2>Available Doctors</h2>
+      <div id="doctorsGrid" class="doctors-grid"></div>
+    </div>
+  </div>
+
+  <!-- Appointment Modal -->
+  <div id="appointmentModal" class="modal">
+    <div class="modal-content">
+      <h3 id="modalDoctorName"></h3>
+      <p id="modalSpecialty"></p>
+      <p id="modalHospital"></p>
+      <input type="date" id="apptDate">
+      <select id="apptTime">
+        <option>09:00 AM</option>
+        <option>11:00 AM</option>
+        <option>02:00 PM</option>
+      </select>
+      <button class="btn" onclick="confirmBooking()">Confirm Appointment</button>
+      <button class="btn" onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Rating Modal -->
+  <div id="ratingModal" class="modal">
+    <div class="modal-content">
+      <h3>Rate: <span id="ratingDoctorName"></span></h3>
+      
+      <div class="star-rating">
+        <i class="far fa-star" onclick="setRating(1)"></i>
+        <i class="far fa-star" onclick="setRating(2)"></i>
+        <i class="far fa-star" onclick="setRating(3)"></i>
+        <i class="far fa-star" onclick="setRating(4)"></i>
+        <i class="far fa-star" onclick="setRating(5)"></i>
+      </div>
+      <input type="hidden" id="selectedRating" value="0">
+
+      <textarea id="commentText" rows="3" placeholder="Write your comment..."></textarea>
+
+      <button class="btn" onclick="submitRating()">Submit Review</button>
+      <button class="btn" onclick="closeRatingModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
