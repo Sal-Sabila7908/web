@@ -83,15 +83,15 @@ function closeRatingModal() {
     document.getElementById("ratingModal").style.display = "none";
 }
 
+
 function submitRating() {
     let value = parseInt(document.getElementById("selectedRating").value);
+    
     if (value > 0) {
-        let id = currentRatingDoctor.id;
-        if (!ratings[id]) ratings[id] = { total: 0, count: 0 };
-        ratings[id].total += value;
-        ratings[id].count++;
-        alert("Thank you");
+        alert("Thank u");
         closeRatingModal();
         renderDoctors();
+    } else {
+        alert("Please select a rating");
     }
 }
