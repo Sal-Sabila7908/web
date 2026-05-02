@@ -83,15 +83,21 @@ function closeRatingModal() {
     document.getElementById("ratingModal").style.display = "none";
 }
 
-
 function submitRating() {
     let value = parseInt(document.getElementById("selectedRating").value);
+     if (value > 0 && currentRatingDoctor) {
+         if (!ratings[currentRatingDoctor.id]) {
+            ratings[currentRatingDoctor.id] = { total: 0, count: 0 };
+        }
+        
+        ratings[currentRatingDoctor.id].total += value;
+        ratings[currentRatingDoctor.id].count += 1;
     
-    if (value > 0) {
-        alert("Thank u");
+        alert(`Thank you for rating ${currentRatingDoctor.name} with ${value} stars!`);
+        
         closeRatingModal();
-        renderDoctors();
+        renderDoctors()
     } else {
-        alert("Please select a rating");
+        alert("Please select a star rating first!");
     }
 }
